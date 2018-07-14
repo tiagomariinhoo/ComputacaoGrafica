@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -22,173 +21,238 @@ void Desenha(void) //Desenha quads
                glVertex2i(100,150);
                glVertex2i(100,100);
                // Especifica que a cor corrente é azul
-               glColor3f(0.0f, 0.0f, 1.0f);
+               // glColor3f(0.0f, 0.0f, 1.0f);
                glVertex2i(150,100);
                glVertex2i(150,150);               
      glEnd();
+
+     glBegin(GL_POINTS);
+     	glVertex2i(100, 170);
+   	 glEnd(); 
+
+   	 glBegin(GL_LINES);
+   	 glVertex2i(100, 190);
+   	 glVertex2i(100, 230);
+   glEnd();
+
+    glBegin(GL_LINE_STRIP);
+      glVertex2i(90, 230);
+      glVertex2i(90, 240);
+      glVertex2i(110, 240);
+      glVertex2i(110, 230);
+   glEnd();
+
+   glBegin(GL_LINE_LOOP);
+      glVertex2i(150, 80);
+      glVertex2i(150, 90);
+      glVertex2i(160, 100);
+      glVertex2i(160, 50);
+      // glVertex2i(420, 40);
+      // glVertex2i(109, 40);
+   glEnd();
+
+    glBegin(GL_TRIANGLES);
+      glVertex2i(190, 180);
+      glVertex2i(190, 190);
+      // glVertex2i(150, 60);
+      // glVertex2i(230, 100);
+      glVertex2i(150, 140);
+      // glVertex2i(109, 40);
+   glEnd();
+
+    glBegin(GL_TRIANGLE_STRIP);
+      glVertex2i(20, 50);
+      glVertex2i(30, 80);
+      glVertex2i(30, 60);
+      glVertex2i(20, 100);
+      // glVertex2i(420, 40);
+      glVertex2i(10, 40);
+   glEnd();
+
+   glBegin(GL_QUAD_STRIP);
+      glVertex2i(200, 50);
+      glVertex2i(210, 80);
+      glVertex2i(230, 60);
+      glVertex2i(240, 100);
+      glVertex2i(210, 40);
+      glVertex2i(230, 40);
+      glVertex2i(240, 200);
+      // glVertex2i(50, 400);
+   glEnd();
+
+    glBegin(GL_POLYGON);
+      glVertex2i(200, 100);
+      glVertex2i(210, 110);
+      glVertex2i(230, 100);
+      glVertex2i(240, 200);
+      glVertex2i(240, 210);
+      glVertex2i(230, 200);
+      glVertex2i(220, 200);
+      glVertex2i(200, 200);
+   glEnd();
 
      // Executa os comandos OpenGL
      glFlush();
 }
 
-void Desenha2(){ //Desenha os pontos
+// void Desenha2(){ //Desenha os pontos
    
-   glMatrixMode(GL_MODELVIEW);
-   glLoadIdentity();
-   glClear(GL_COLOR_BUFFER_BIT);
+//    glMatrixMode(GL_MODELVIEW);
+//    glLoadIdentity();
+//    glClear(GL_COLOR_BUFFER_BIT);
 
-   glColor3f(0.3f, 1.0f, 1.0f);
-   glPointSize(5);
+//    glColor3f(0.3f, 1.0f, 1.0f);
+//    glPointSize(5);
 
-   glBegin(GL_POINTS);
-      glVertex2i(100, 50);
-      glVertex2i(100, 130);
-      glVertex2i(150, 130);
-      glVertex2i(200, 130);
-      glVertex2i(250, 130);
-   glEnd(); 
+//    glBegin(GL_POINTS);
+//       glVertex2i(100, 50);
+//       glVertex2i(100, 130);
+//       glVertex2i(150, 130);
+//       glVertex2i(200, 130);
+//       glVertex2i(250, 130);
+//    glEnd(); 
    
-   glFlush();
-}
+//    glFlush();
+// }
 
-void Desenha3(){ //desenha as lines
-   glMatrixMode(GL_MODELVIEW);
-   glLoadIdentity();
-   glClear(GL_COLOR_BUFFER_BIT);
+// void Desenha3(){ //desenha as lines
+//    glMatrixMode(GL_MODELVIEW);
+//    glLoadIdentity();
+//    glClear(GL_COLOR_BUFFER_BIT);
 
-   glColor3f(0.3f, 1.0f, 1.0f);
+//    glColor3f(0.3f, 1.0f, 1.0f);
 
-   glBegin(GL_LINES);
-      glVertex2i(100,50);
-      glVertex2i(150,50);
-      glVertex2i(200,30);
-      glVertex2i(250, 40);
-   glEnd();
-   glFlush();
-}
+//    glBegin(GL_LINES);
+//       glVertex2i(100,50);
+//       glVertex2i(150,50);
+//       glVertex2i(200,30);
+//       glVertex2i(250, 40);
+//    glEnd();
+//    glFlush();
+// }
 
-void Desenha4(){ //Desenha line strip
-   glMatrixMode(GL_MODELVIEW);
-   glLoadIdentity();
-   glClear(GL_COLOR_BUFFER_BIT);
+// void Desenha4(){ //Desenha line strip
+//    glMatrixMode(GL_MODELVIEW);
+//    glLoadIdentity();
+//    glClear(GL_COLOR_BUFFER_BIT);
 
-   glColor3f(0.3f, 1.0f, 1.0f);
-   glBegin(GL_LINE_STRIP);
-      glVertex2i(100, 50);
-      glVertex2i(300, 80);
-      glVertex2i(150, 60);
-      glVertex2i(109, 40);
-   glEnd();
-   glFlush();
-}
+//    glColor3f(0.3f, 1.0f, 1.0f);
+//    glBegin(GL_LINE_STRIP);
+//       glVertex2i(100, 50);
+//       glVertex2i(300, 80);
+//       glVertex2i(150, 60);
+//       glVertex2i(109, 40);
+//    glEnd();
+//    glFlush();
+// }
 
-void Desenha5(){ //desenha line loop
-   glMatrixMode(GL_MODELVIEW);
-   glLoadIdentity();
-   glClear(GL_COLOR_BUFFER_BIT);
+// void Desenha5(){ //desenha line loop
+//    glMatrixMode(GL_MODELVIEW);
+//    glLoadIdentity();
+//    glClear(GL_COLOR_BUFFER_BIT);
 
-   glColor3f(0.3f, 1.0f, 1.0f);
-   glBegin(GL_LINE_LOOP);
-      glVertex2i(100, 50);
-      glVertex2i(300, 80);
-      glVertex2i(150, 60);
-      glVertex2i(230, 100);
-      glVertex2i(420, 40);
-      glVertex2i(109, 40);
-   glEnd();
-   glFlush();
-}
+//    glColor3f(0.3f, 1.0f, 1.0f);
+//    glBegin(GL_LINE_LOOP);
+//       glVertex2i(100, 50);
+//       glVertex2i(300, 80);
+//       glVertex2i(150, 60);
+//       glVertex2i(230, 100);
+//       glVertex2i(420, 40);
+//       glVertex2i(109, 40);
+//    glEnd();
+//    glFlush();
+// }
 
-void Desenha6(){ //Desenha Triangulo
-    glMatrixMode(GL_MODELVIEW);
-   glLoadIdentity();
-   glClear(GL_COLOR_BUFFER_BIT);
+// void Desenha6(){ //Desenha Triangulo
+//     glMatrixMode(GL_MODELVIEW);
+//    glLoadIdentity();
+//    glClear(GL_COLOR_BUFFER_BIT);
 
-   glColor3f(0.3f, 1.0f, 1.0f);
-   glBegin(GL_TRIANGLES);
-      glVertex2i(100, 50);
-      glVertex2i(300, 80);
-      // glVertex2i(150, 60);
-      // glVertex2i(230, 100);
-      glVertex2i(420, 40);
-      // glVertex2i(109, 40);
-   glEnd();
-   glFlush();
-}
+//    glColor3f(0.3f, 1.0f, 1.0f);
+//    glBegin(GL_TRIANGLES);
+//       glVertex2i(100, 50);
+//       glVertex2i(300, 80);
+//       // glVertex2i(150, 60);
+//       // glVertex2i(230, 100);
+//       glVertex2i(420, 40);
+//       // glVertex2i(109, 40);
+//    glEnd();
+//    glFlush();
+// }
 
-void Desenha7(){ //Triangle Strip
-    glMatrixMode(GL_MODELVIEW);
-   glLoadIdentity();
-   glClear(GL_COLOR_BUFFER_BIT);
+// void Desenha7(){ //Triangle Strip
+//     glMatrixMode(GL_MODELVIEW);
+//    glLoadIdentity();
+//    glClear(GL_COLOR_BUFFER_BIT);
 
-   glColor3f(0.3f, 1.0f, 1.0f);
-   glBegin(GL_TRIANGLE_STRIP);
-      glVertex2i(100, 50);
-      glVertex2i(300, 80);
-      glVertex2i(150, 60);
-      glVertex2i(230, 100);
-      // glVertex2i(420, 40);
-      glVertex2i(109, 40);
-   glEnd();
-   glFlush();
-}
+//    glColor3f(0.3f, 1.0f, 1.0f);
+//    glBegin(GL_TRIANGLE_STRIP);
+//       glVertex2i(100, 50);
+//       glVertex2i(300, 80);
+//       glVertex2i(150, 60);
+//       glVertex2i(230, 100);
+//       // glVertex2i(420, 40);
+//       glVertex2i(109, 40);
+//    glEnd();
+//    glFlush();
+// }
 
-void Desenha8(){ //Quad Strip
-   glMatrixMode(GL_MODELVIEW);
-   glLoadIdentity();
-   glClear(GL_COLOR_BUFFER_BIT);
+// void Desenha8(){ //Quad Strip
+//    glMatrixMode(GL_MODELVIEW);
+//    glLoadIdentity();
+//    glClear(GL_COLOR_BUFFER_BIT);
 
-   glColor3f(0.3f, 1.0f, 1.0f);
-   glBegin(GL_QUAD_STRIP);
-      glVertex2i(100, 50);
-      glVertex2i(300, 80);
-      glVertex2i(150, 60);
-      glVertex2i(230, 100);
-      glVertex2i(420, 40);
-      glVertex2i(109, 40);
-      glVertex2i(50, 200);
-      glVertex2i(50, 400);
-   glEnd();
-   glFlush();
-}  
+//    glColor3f(0.3f, 1.0f, 1.0f);
+//    glBegin(GL_QUAD_STRIP);
+//       glVertex2i(100, 50);
+//       glVertex2i(300, 80);
+//       glVertex2i(150, 60);
+//       glVertex2i(230, 100);
+//       glVertex2i(420, 40);
+//       glVertex2i(109, 40);
+//       glVertex2i(50, 200);
+//       glVertex2i(50, 400);
+//    glEnd();
+//    glFlush();
+// }  
 
-void Desenha9(){ //POLYGON
-   glMatrixMode(GL_MODELVIEW);
-   glLoadIdentity();
-   glClear(GL_COLOR_BUFFER_BIT);
+// void Desenha9(){ //POLYGON
+//    glMatrixMode(GL_MODELVIEW);
+//    glLoadIdentity();
+//    glClear(GL_COLOR_BUFFER_BIT);
 
-   glColor3f(0.3f, 1.0f, 1.0f);
-   glBegin(GL_POLYGON);
-      // glVertex2i(100, 50);
-      // glVertex2i(300, 80);
-      // glVertex2i(150, 60);
-      glVertex2i(230, 100);
-      glVertex2i(420, 40);
-      glVertex2i(109, 40);
-      glVertex2i(50, 200);
-      glVertex2i(50, 400);
-   glEnd();
-   glFlush();
-}
+//    glColor3f(0.3f, 1.0f, 1.0f);
+//    glBegin(GL_POLYGON);
+//       // glVertex2i(100, 50);
+//       // glVertex2i(300, 80);
+//       // glVertex2i(150, 60);
+//       glVertex2i(230, 100);
+//       glVertex2i(420, 40);
+//       glVertex2i(109, 40);
+//       glVertex2i(50, 200);
+//       glVertex2i(50, 400);
+//    glEnd();
+//    glFlush();
+// }
 
-void Desenha10(){ //Triangle Fan
-   glMatrixMode(GL_MODELVIEW);
-   glLoadIdentity();
-   glClear(GL_COLOR_BUFFER_BIT);
+// void Desenha10(){ //Triangle Fan
+//    glMatrixMode(GL_MODELVIEW);
+//    glLoadIdentity();
+//    glClear(GL_COLOR_BUFFER_BIT);
 
-   glColor3f(0.3f, 1.0f, 1.0f);
-   glBegin(GL_TRIANGLE_FAN);
-      glVertex2i(100, 50);
-      glVertex2i(300, 80);
-      glVertex2i(150, 60);
-      glVertex2i(230, 100);
-      glVertex2i(420, 40);
-      glVertex2i(109, 40);
-      glVertex2i(50, 200);
-      glVertex2i(50, 400);
-   glEnd();
-   glFlush();
-}
+//    glColor3f(0.3f, 1.0f, 1.0f);
+//    glBegin(GL_TRIANGLE_FAN);
+//       glVertex2i(100, 50);
+//       glVertex2i(300, 80);
+//       glVertex2i(150, 60);
+//       glVertex2i(230, 100);
+//       glVertex2i(420, 40);
+//       glVertex2i(109, 40);
+//       glVertex2i(50, 200);
+//       glVertex2i(50, 400);
+//    glEnd();
+//    glFlush();
+// }
 
 // Inicializa parâmetros de rendering
 void Inicializa (void)
@@ -226,10 +290,11 @@ int main(int argc, char** argv)
 
 
      glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-     glutInitWindowSize(400,350);
+     glutInitWindowSize(800,600);
      glutInitWindowPosition(10,10);
      glutCreateWindow("Quadrado");
-     glutDisplayFunc(Desenha10);
+
+     glutDisplayFunc(Desenha);
      glutReshapeFunc(AlteraTamanhoJanela);
      Inicializa();
      glutMainLoop();
