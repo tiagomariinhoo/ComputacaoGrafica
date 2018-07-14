@@ -262,12 +262,17 @@ void toRight(){
 }
 
 void MyKeyboardFunc(unsigned char Key, int x, int y){
-  switch(Key){
+  // switch(Key){
     // case 'a': rotateLeft();
     // break;
-    case 'd': toRight();
-    break;
-  }
+    // case 'd': toRight();
+    // break;
+  // }
+}
+
+void delay(int value){
+  toRight();
+  glutTimerFunc(100, delay, 1);
 }
 
 // Programa Principal 
@@ -280,6 +285,7 @@ int main(int argc, char** argv)
      glutInitWindowSize(400,350);
      glutInitWindowPosition(10,10);
      glutCreateWindow("Quadrado");
+     glutTimerFunc(100, delay, 1);
      glutDisplayFunc(desenhaLinha);
      glutReshapeFunc(AlteraTamanhoJanela);
      Inicializa();
