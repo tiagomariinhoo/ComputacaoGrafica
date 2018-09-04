@@ -109,7 +109,9 @@ void display(void){
 
   glDisableClientState (GL_VERTEX_ARRAY);
 
+  //Pop na matriz, já que acabou de trabalhar com ela
   glPopMatrix();
+  //Troca os buffers
   glutSwapBuffers();
 }
 
@@ -118,28 +120,41 @@ void keyboard(unsigned char key, int x, int y){
   case 27:
     exit(0);
     break;
-  case 'a':
+  case 'a': //Printa as coordenadas no terminal
     printf("%d, %d\n",x,y);
     break;
   case 'y':
-    eixoy = (eixoy + 5) % 360;
+    eixoy = (eixoy + 5) % 360; //Rotaciona no eixo y
     glutPostRedisplay();
     break;
   case 'Y':
-    eixoy = (eixoy - 5) % 360;
+    eixoy = (eixoy - 5) % 360; //Rotaciona no eixo y
     glutPostRedisplay();
     break;
   case 'x':
-    eixox = (eixox + 5) % 360;
+    eixox = (eixox + 5) % 360; //Rotaciona no eixo x
     glutPostRedisplay();
     break;
   case 'X':
-    eixox = (eixox - 5) % 360;
+    eixox = (eixox - 5) % 360; //Rotaciona no eixo x
     glutPostRedisplay();
     break;
   case 'p':
     glLoadIdentity();
+    //GluPerspective faz com que todas as chamadas de agora em diante sejam projeções de perspectiva
+    //A parte que foi dado na aula
+    //fovy, aspect, zNear, zFar (variação no eixo Z, tipo profundidade)
+    //Fovy especifica o campo de visão em graus
+    //Aspect define a relação de aspecto entre largura e altura
+    //ZNear e ZFar especificam as distancias entre o observador e os planos de recorte mais proimo e distante
+    //Lembrar da parte do ZNear e ZFar dado em aula
     gluPerspective(65.0, (GLfloat) largura/(GLfloat) altura, 20.0, 120.0);
+    //GluLookAt permite definir o ponto de observação, um ponto de referência, para onde o observador
+    //está olhando e a direção do vetor que aponta para cima
+    //eyex, eyez, centerx, centery, centerz, upx, upy, upz
+    //Lembrar do exemplo da câmera dado em aula
+    //Nesse caso, o obsrvador se encontra em z=-90, está olhando para a origem (0,0,0)
+    //E o vetor aponta para (0,1,0) 
     gluLookAt(0, 0, -90, 0, 0, 0, 0, 1, 0);
     glutPostRedisplay();
     break;
